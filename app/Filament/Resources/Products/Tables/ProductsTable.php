@@ -18,6 +18,11 @@ class ProductsTable
             ->columns([
                 TextColumn::make('name')
                     ->searchable(),
+                ImageColumn::make('image'),
+                TextColumn::make('variant')
+                    ->searchable(),
+                TextColumn::make('categories.category_name')->searchable(),
+                TextColumn::make('suppliers.name')->searchable(),
                 TextColumn::make('price')
                     ->money()
                     ->sortable(),
@@ -31,9 +36,6 @@ class ProductsTable
                     ->dateTime()
                     ->sortable(),
                 TextColumn::make('barcode')
-                    ->searchable(),
-                ImageColumn::make('image'),
-                TextColumn::make('variant')
                     ->searchable(),
                 TextColumn::make('creator.name')
                     ->label('Created By')

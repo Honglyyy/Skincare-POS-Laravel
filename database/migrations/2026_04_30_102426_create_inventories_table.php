@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('customers', function (Blueprint $table) {
+        Schema::create('inventories', function (Blueprint $table) {
             $table->id();
-            $table->string('customer_name');
-            $table->string('phone');
+            $table->foreignId('product_id')->constrained('products');
+            $table->float('quantity');
+            $table->enum('quantityType', ['in', 'out'])->default('in');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('customer');
+        Schema::dropIfExists('inventories');
     }
 };

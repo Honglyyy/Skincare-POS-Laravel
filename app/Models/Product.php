@@ -31,4 +31,8 @@ class Product extends Model
     public function suppliers(): \Illuminate\Database\Eloquent\Relations\BelongsToMany{
         return $this->belongsToMany(Supplier::class,'product_suppliers');
     }
+    public function inventories()
+    {
+        return $this->hasMany(Inventory::class);
+    }
 }

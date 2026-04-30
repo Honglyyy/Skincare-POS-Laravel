@@ -2,7 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\Brand;
+use App\Models\Category;
 use App\Models\Permission;
+use App\Models\Supplier;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -50,5 +53,38 @@ class DatabaseSeeder extends Seeder
         ])->assignRole('ADMIN');
 
 
+        Category::create(
+            ['category_name' => 'Face']
+        );
+
+        Category::create(
+            ['category_name' => 'Body']
+        );
+
+        Brand::create([
+            ['brandName'=>'Revlon']
+        ]);
+
+        Brand::create([
+            ['brandName'=>'Cerave']
+        ]);
+
+        Supplier::create([
+            [
+                'name'=>'Cerve',
+                'email'=>'Cerve@Cerve.com',
+                'phone'=>'0123456789',
+                'address'=>'Cerve PP',
+            ]
+        ]);
+
+        Supplier::create([
+            [
+                'name'=>'Revlon',
+                'email'=>'Revlon@Revlon.com',
+                'phone'=>'0123456789',
+                'address'=>'Revlon PP',
+            ]
+        ]);
     }
 }
