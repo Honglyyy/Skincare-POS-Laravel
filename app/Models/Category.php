@@ -9,4 +9,9 @@ class Category extends Model
     protected $fillable = [
         'category_name'
     ];
+
+    public function products(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Product::class,'product_categories');
+    }
 }

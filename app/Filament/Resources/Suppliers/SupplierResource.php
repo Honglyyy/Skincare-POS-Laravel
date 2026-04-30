@@ -21,7 +21,7 @@ class SupplierResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::BuildingStorefront;
     protected static string | UnitEnum | null $navigationGroup = "Product Management";
-
+    protected static ?int $navigationSort = 3;
     public static function form(Schema $schema): Schema
     {
         return SupplierForm::configure($schema);
