@@ -57,7 +57,8 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->navigationGroups([
                 'User Management',
-                'Cutomers'
+                'Customers',
+                'Product Management'
             ]);
     }
 }
