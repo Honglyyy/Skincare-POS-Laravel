@@ -21,7 +21,7 @@ class InventoriesTable
                 TextColumn::make('quantity')
                     ->sortable(),
 
-                TextColumn::make('quantityType')
+                TextColumn::make('quantity_type')
                     ->badge()
                     ->color(fn ($state) => $state === 'in' ? 'success' : 'danger'),
 

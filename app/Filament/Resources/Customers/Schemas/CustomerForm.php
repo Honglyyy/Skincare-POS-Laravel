@@ -11,7 +11,7 @@ class CustomerForm
     {
         return $schema
             ->components([
-                TextInput::make('customer_name'),
+                TextInput::make('name'),
                 TextInput::make('phone'),
             ]);
     }

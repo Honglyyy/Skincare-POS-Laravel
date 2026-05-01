@@ -19,7 +19,7 @@ class CustomersTable
         return $table
             ->columns([
                 TextColumn::make('id')->label('ID')->searchable()->sortable(),
-                TextColumn::make('customer_name')->searchable()->sortable(),
+                TextColumn::make('name')->searchable()->sortable(),
                 TextColumn::make('phone')->searchable()->sortable(),
             ])
             ->filters([

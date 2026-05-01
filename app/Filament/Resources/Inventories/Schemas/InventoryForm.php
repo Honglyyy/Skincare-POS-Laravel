@@ -21,7 +21,7 @@ class InventoryForm
                 ->numeric()
                 ->required(),
 
-            Select::make('quantityType')
+            Select::make('quantity_type')
             ->options([
                 'in' => 'Stock In',
                 'out' => 'Stock Out',

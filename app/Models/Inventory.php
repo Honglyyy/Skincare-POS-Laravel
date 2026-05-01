@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Inventory extends Model
 {
-    protected $fillable = ['product_id', 'quantity','quantityType'];
+    protected $fillable = ['product_id', 'quantity','quantity_type'];
 
     public function product(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
@@ -19,12 +19,12 @@ class Inventory extends Model
 
             $product = $inventory->product;
 
-            if ($inventory->quantityType === 'in') {
-                $product->increment('stockOnHand', $inventory->quantity);
+            if ($inventory->quantity_type === 'in') {
+                $product->increment('stock_on_hand', $inventory->quantity);
             }
 
-            if ($inventory->quantityType === 'out') {
-                $product->decrement('stockOnHand', $inventory->quantity);
+            if ($inventory->quantity_type === 'out') {
+                $product->decrement('stock_on_hand', $inventory->quantity);
             }
         });
     }

@@ -28,6 +28,7 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
+            ->brandName('Skin that care')
             ->colors([
                 'primary' => Color::Amber,
             ])

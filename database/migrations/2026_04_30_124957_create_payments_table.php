@@ -11,9 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('brands', function (Blueprint $table) {
+        Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->string("name");
+            $table->enum('payment_type', ['cash', 'card','qr'])->default('cash');
+            $table->decimal('amount',10,2);
+
+            $table->foreignId('sale_id')->constrained('sales');
+
             $table->timestamps();
         });
     }
@@ -23,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('brands');
+        Schema::dropIfExists('payments');
     }
 };

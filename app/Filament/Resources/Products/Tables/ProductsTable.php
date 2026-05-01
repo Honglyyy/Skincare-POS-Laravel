@@ -21,7 +21,7 @@ class ProductsTable
                 ImageColumn::make('image'),
                 TextColumn::make('variant')
                     ->searchable(),
-                TextColumn::make('categories.category_name')->searchable(),
+                TextColumn::make('categories.name')->searchable(),
                 TextColumn::make('suppliers.name')->searchable(),
                 TextColumn::make('price')
                     ->money()
@@ -29,10 +29,10 @@ class ProductsTable
                 TextColumn::make('cost')
                     ->money()
                     ->sortable(),
-                TextColumn::make('stockOnHand')
+                TextColumn::make('stock_on_hand')
                     ->numeric()
                     ->sortable(),
-                TextColumn::make('expirationDate')
+                TextColumn::make('expiration_date')
                     ->dateTime()
                     ->sortable(),
                 TextColumn::make('barcode')

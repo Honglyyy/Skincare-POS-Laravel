@@ -11,7 +11,7 @@ class CategoryForm
     {
         return $schema
             ->components([
-                TextInput::make('category_name')
+                TextInput::make('name')
                 ->required()
                 ->minLength(2)
                 ->maxLength(255),

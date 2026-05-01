@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('product_id')->constrained('products');
             $table->float('quantity');
-            $table->enum('quantityType', ['in', 'out'])->default('in');
+            $table->enum('quantity_type', ['in', 'out'])->default('in');
             $table->timestamps();
         });
     }

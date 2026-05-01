@@ -14,7 +14,7 @@ class BrandsTable
     {
         return $table
             ->columns([
-                TextColumn::make('brandName')
+                TextColumn::make('name')
                     ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()

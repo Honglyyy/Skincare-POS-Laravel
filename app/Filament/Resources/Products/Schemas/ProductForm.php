@@ -18,7 +18,7 @@ class ProductForm
                     ->required(),
                 TextInput::make('description'),
                 Select::make('categories')
-                    ->relationship('categories',"category_name")
+                    ->relationship('categories',"name")
                     ->multiple()
                     ->preload()
                     ->required(),
@@ -35,7 +35,7 @@ class ProductForm
                     ->required()
                     ->numeric()
                     ->prefix('$'),
-                DateTimePicker::make('expirationDate')
+                DateTimePicker::make('expiration_date')
                     ->required(),
                 TextInput::make('variant')
                     ->required(),
@@ -44,7 +44,8 @@ class ProductForm
                 FileUpload::make('image')
                     ->image()
                     ->directory('products')
-                    ->columnSpan(2),
+                    ->columnSpan(2)
+                ->disk('public'),
             ]);
     }
 }
